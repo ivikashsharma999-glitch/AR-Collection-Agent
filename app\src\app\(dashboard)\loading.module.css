@@ -1,0 +1,105 @@
+.loadingPage {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.kpiCard,
+.largePanel,
+.sidePanel,
+.bottomGrid > div {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.kpiCard::after,
+.largePanel::after,
+.sidePanel::after,
+.bottomGrid > div::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+  animation: shimmer 1.25s ease-in-out infinite;
+  content: "";
+  transform: translateX(-100%);
+}
+
+.kpiCard {
+  display: grid;
+  gap: 0.8rem;
+  min-height: 150px;
+  padding: 1.25rem;
+}
+
+.kpiCard span,
+.kpiCard strong,
+.kpiCard em {
+  display: block;
+  border-radius: 9999px;
+  background: rgba(143, 168, 192, 0.18);
+}
+
+.kpiCard span {
+  width: 62%;
+  height: 14px;
+}
+
+.kpiCard strong {
+  width: 44%;
+  height: 30px;
+}
+
+.kpiCard em {
+  width: 72%;
+  height: 12px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+.largePanel,
+.sidePanel {
+  min-height: 360px;
+}
+
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 1.5rem;
+}
+
+.bottomGrid > div {
+  min-height: 220px;
+}
+
+@keyframes shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 1200px) {
+  .kpiGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .kpiGrid,
+  .contentGrid,
+  .bottomGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -3,7 +3,7 @@
 import React from 'react';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { 
   LayoutDashboard, 
   Users, 
@@ -95,6 +95,17 @@ const navGroups = [
 
 export function Sidebar() {
   const pathname = usePathname();
+  const router = useRouter();
+
+  React.useEffect(() => {
+    const routes = ['/dashboard', ...navGroups.flatMap((group) => group.items.map((item) => item.href))];
+    const uniqueRoutes = [...new Set(routes)];
+    const timer = window.setTimeout(() => {
+      uniqueRoutes.forEach((href) => router.prefetch(href));
+    }, 600);
+
+    return () => window.clearTimeout(timer);
+  }, [router]);
 
   return (
     <aside className={styles.sidebar}>
@@ -119,7 +130,10 @@ export function Sidebar() {
                 <Link 
                   key={item.name} 
                   href={item.href}
+                  prefetch
                   className={`${styles.navItem} ${isActive ? styles.navItemActive : ''}`}
+                  onMouseEnter={() => router.prefetch(item.href)}
+                  onFocus={() => router.prefetch(item.href)}
                 >
                   <Icon size={16} />
                   <span style={{ flex: 1 }}>{item.name}</span>

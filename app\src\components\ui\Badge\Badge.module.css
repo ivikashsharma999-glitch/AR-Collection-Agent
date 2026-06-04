@@ -1,0 +1,56 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+/* Sizes */
+.size-sm {
+  font-size: var(--text-xs);
+  padding: 0.125rem 0.5rem;
+}
+
+.size-md {
+  font-size: var(--text-sm);
+  padding: 0.25rem 0.75rem;
+}
+
+/* Variants */
+.variant-default {
+  background-color: var(--bg-hover);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-default);
+}
+
+.variant-brand {
+  background-color: var(--brand-primary-glow);
+  color: var(--brand-primary-light);
+  border: 1px solid var(--border-brand);
+}
+
+.variant-success {
+  background-color: var(--color-success-bg);
+  color: var(--color-success-light);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.variant-warning {
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning-light);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.variant-danger {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger-light);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.variant-info {
+  background-color: var(--color-info-bg);
+  color: var(--color-info-light);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}

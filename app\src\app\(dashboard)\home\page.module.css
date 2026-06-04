@@ -1,0 +1,268 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Top Visual Grid ── */
+.visualGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.chartPanel {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.chartTitle {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0.25rem;
+}
+
+.chartSub {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.chartLegend {
+  display: flex;
+  gap: 1rem;
+  font-size: var(--text-xs);
+  font-weight: 500;
+}
+
+.legendExpected {
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.legendExpected::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 2px;
+  background: var(--text-tertiary);
+}
+
+.legendActual {
+  color: var(--brand-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.legendActual::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 2px;
+  background: var(--brand-primary);
+}
+
+.chartArea {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  margin: 0 -0.5rem;
+}
+
+.ringPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  gap: 1rem;
+}
+
+.kpiLink {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: var(--text-sm);
+  color: var(--brand-accent);
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+.kpiLink:hover {
+  text-decoration: underline;
+}
+
+.iconSuccess, .textSuccess {
+  color: var(--color-success);
+}
+.textDanger {
+  color: var(--color-danger);
+}
+.textMuted {
+  color: var(--text-muted);
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1.5rem;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.panelTitle {
+  font-size: var(--text-base);
+  font-weight: 600;
+}
+
+.viewAllLink {
+  font-size: var(--text-xs);
+  color: var(--brand-accent);
+  font-weight: 500;
+}
+
+.accountList {
+  display: flex;
+  flex-direction: column;
+}
+
+.accountRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.accountRow:last-child {
+  border-bottom: none;
+}
+
+.accountName {
+  font-weight: 600;
+  font-size: var(--text-sm);
+  margin-bottom: 0.25rem;
+}
+
+.accountAmount {
+  text-align: right;
+  font-weight: 600;
+}
+
+.accountLink {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: var(--text-xs);
+  color: var(--brand-accent);
+  margin-top: 0.25rem;
+  font-weight: 500;
+  justify-content: flex-end;
+}
+
+.recommendationList {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recCard {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+
+.recHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.recTitle {
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.recAmount {
+  font-weight: 700;
+  background: rgba(0,0,0,0.2);
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+}
+
+.recDesc {
+  font-size: var(--text-xs);
+  opacity: 0.9;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.recAction {
+  width: 100%;
+  padding: 0.5rem;
+  background: var(--bg-surface);
+  color: var(--brand-primary);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  transition: opacity 0.2s;
+}
+.recAction:hover {
+  opacity: 0.9;
+}
+
+.activityPanel {
+  margin-top: 0.5rem;
+}
+
+.activityFeed {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.activityItem {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.activityIcon {
+  background: var(--bg-hover);
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+}
+
+.activityOutcome {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.activityMeta {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}

@@ -1,0 +1,38 @@
+.card {
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Variants */
+.variant-default {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+}
+
+.variant-glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+}
+
+.variant-interactive {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  cursor: pointer;
+}
+
+.variant-interactive:hover {
+  border-color: var(--border-brand);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background-color: var(--bg-hover);
+}
+
+/* Padding */
+.padding-none { padding: 0; }
+.padding-sm { padding: var(--space-3) var(--space-4); }
+.padding-md { padding: var(--space-5) var(--space-6); }
+.padding-lg { padding: var(--space-8); }

@@ -1,0 +1,230 @@
+.container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* ── Workspace ── */
+.workspace {
+  display: flex;
+  gap: 1.5rem;
+  height: calc(100vh - 200px);
+}
+
+/* ── Sidebar Panels ── */
+.sidebarPanel {
+  width: 280px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.panelTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+  margin-bottom: 1rem;
+}
+
+.draggableNode {
+  padding: 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.draggableNode:hover {
+  border-color: var(--brand-primary);
+  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.1);
+  transform: translateY(-2px);
+}
+
+.draggableNode.trigger {
+  border-left: 3px solid var(--brand-accent);
+}
+
+.draggableNode.action {
+  border-left: 3px solid var(--brand-primary);
+}
+
+.iconWrapper {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-hover);
+  color: var(--text-secondary);
+}
+
+.trigger .iconWrapper {
+  color: var(--brand-accent);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.action .iconWrapper {
+  color: var(--brand-primary);
+  background: rgba(249, 115, 22, 0.1);
+}
+
+/* ── Canvas ── */
+.canvas {
+  flex: 1;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  background-image: radial-gradient(var(--border-subtle) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.toolbar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+/* ── Node Visuals (Hardcoded layout for demo) ── */
+.flowContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.connectionLine {
+  width: 2px;
+  height: 2.5rem;
+  background: var(--border-strong);
+  position: relative;
+}
+
+.connectionLine::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--border-strong);
+  border-bottom: 2px solid var(--border-strong);
+  transform: rotate(45deg);
+}
+
+.activeLine {
+  background: var(--brand-primary);
+}
+
+.activeLine::after {
+  border-color: var(--brand-primary);
+}
+
+.canvasNode {
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  width: 320px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.canvasNode.startNode {
+  border-color: var(--brand-accent);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+.canvasNode.actionNode {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.15);
+}
+
+.nodeHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.nodeBody {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  background: var(--bg-hover);
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+}
+
+.conditionBox {
+  font-family: monospace;
+  color: var(--color-warning);
+}
+
+.splitFlow {
+  display: flex;
+  gap: 4rem;
+  position: relative;
+}
+
+.splitPath {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  position: relative;
+}
+
+.horizontalLine {
+  position: absolute;
+  top: -2.5rem;
+  left: calc(50% - 2rem);
+  right: calc(50% - 2rem);
+  height: 2px;
+  background: var(--border-strong);
+}

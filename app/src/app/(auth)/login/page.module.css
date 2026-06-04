@@ -1,0 +1,441 @@
+.page {
+  --bg-primary: #0c1a2e;
+  --bg-surface: #132438;
+  --bg-elevated: #1a3050;
+  --accent: #f97316;
+  --accent-hover: #ea580c;
+  --text-primary: #ffffff;
+  --text-muted: #8fa8c0;
+  --border: rgba(255, 255, 255, 0.08);
+  --green: #1d9e75;
+  --red: #e24b4a;
+  position: relative;
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(249, 115, 22, 0.12), transparent 28%),
+    radial-gradient(circle at 88% 20%, rgba(29, 158, 117, 0.1), transparent 26%),
+    linear-gradient(135deg, #08111f 0%, var(--bg-primary) 52%, #07111d 100%);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  padding: 2rem;
+}
+
+.page::before {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(circle at center, black, transparent 78%);
+  pointer-events: none;
+  content: "";
+}
+
+.backgroundGlow {
+  position: absolute;
+  width: 680px;
+  height: 680px;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.08);
+  filter: blur(80px);
+  transform: translate(38vw, -28vh);
+  pointer-events: none;
+}
+
+.backLink {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  background: rgba(19, 36, 56, 0.72);
+  padding: 0.65rem 0.95rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  transition: background 200ms ease, color 200ms ease, transform 200ms ease;
+}
+
+.backLink:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.authShell {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.85fr);
+  width: min(1100px, 100%);
+  min-height: 660px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  background: rgba(19, 36, 56, 0.72);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(18px);
+}
+
+.brandPanel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 3rem;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(249, 115, 22, 0.2), transparent 25%),
+    radial-gradient(circle at 80% 75%, rgba(29, 158, 117, 0.14), transparent 24%),
+    #0b1829;
+}
+
+.brandPanel::after {
+  position: absolute;
+  right: -130px;
+  bottom: -130px;
+  width: 360px;
+  height: 360px;
+  border: 1px solid rgba(249, 115, 22, 0.22);
+  border-radius: 50%;
+  content: "";
+}
+
+.logoRow {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoIcon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #ff9a3d, var(--accent));
+  box-shadow: 0 0 26px rgba(249, 115, 22, 0.34);
+  color: white;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.logoText {
+  color: white;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.logoText span {
+  color: var(--accent);
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 1;
+  max-width: 540px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.heroCopy h1 {
+  margin: 0;
+  color: white;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.heroCopy p {
+  max-width: 500px;
+  margin: 1.25rem 0 0;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.metricGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.metricGrid div {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.045);
+  padding: 1.2rem;
+}
+
+.metricGrid strong {
+  display: block;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.metricGrid span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.trustList {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.trustList div {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #d8e5f2;
+  font-size: 0.95rem;
+}
+
+.trustList svg {
+  color: var(--green);
+}
+
+.formPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(12, 26, 46, 0.72);
+  padding: 3rem;
+}
+
+.formHeader {
+  margin-bottom: 2rem;
+}
+
+.secureBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 1.15rem;
+  border: 1px solid rgba(29, 158, 117, 0.3);
+  border-radius: 9999px;
+  background: rgba(29, 158, 117, 0.1);
+  padding: 0.45rem 0.75rem;
+  color: #7ee0bf;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.formHeader h2 {
+  margin: 0;
+  color: white;
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 800;
+}
+
+.formHeader p {
+  margin: 0.7rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.form {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.inputGroup {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.inputGroup span {
+  color: #eef5fb;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.inputWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: var(--bg-elevated);
+  padding: 0 1rem;
+  transition: border-color 200ms ease, box-shadow 200ms ease, background 200ms ease;
+}
+
+.inputWrap:focus-within {
+  border-color: rgba(249, 115, 22, 0.8);
+  background: #1d3658;
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.12);
+}
+
+.inputWrap svg {
+  color: var(--text-muted);
+}
+
+.inputWrap input {
+  width: 100%;
+  min-height: 54px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+}
+
+.inputWrap input::placeholder {
+  color: #6f879f;
+}
+
+.submitButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 56px;
+  margin-top: 0.45rem;
+  border: 0;
+  border-radius: 9999px;
+  background: var(--accent);
+  color: white;
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: 0 14px 30px rgba(249, 115, 22, 0.18);
+  transition: background 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: var(--accent-hover);
+  box-shadow: 0 0 28px rgba(249, 115, 22, 0.35);
+  transform: translateY(-2px);
+}
+
+.submitButton:disabled {
+  cursor: wait;
+  opacity: 0.78;
+}
+
+.errorBox {
+  border: 1px solid rgba(226, 75, 74, 0.35);
+  border-radius: 14px;
+  background: rgba(226, 75, 74, 0.12);
+  padding: 0.9rem 1rem;
+  color: #ffb8b8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.switchBox {
+  margin-top: 1.35rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.switchBox button {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.switchBox button:hover {
+  color: #ffb47b;
+}
+
+.legalText {
+  margin: 1.3rem 0 0;
+  color: #708aa3;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.loadingCard {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  background: rgba(19, 36, 56, 0.76);
+  padding: 2.5rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 940px) {
+  .page {
+    align-items: start;
+    padding: 5.5rem 1rem 1rem;
+  }
+
+  .authShell {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .brandPanel {
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .formPanel {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 0;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .backLink {
+    right: 1rem;
+    left: 1rem;
+    justify-content: center;
+  }
+
+  .brandPanel,
+  .formPanel {
+    padding: 1.35rem;
+  }
+
+  .metricGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formHeader h2 {
+    font-size: 1.7rem;
+  }
+
+  .heroCopy h1 {
+    font-size: 2rem;
+  }
+}
